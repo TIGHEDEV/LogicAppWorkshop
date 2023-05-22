@@ -58,7 +58,6 @@ Challenge Details:
 7) Local/remote config
     - Review connections.json
     - Review local.settings.json.
-    - Create config entry and use in HTTP connector to starwars API
 
 
 
