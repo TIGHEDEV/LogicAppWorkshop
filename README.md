@@ -61,6 +61,14 @@ Challenge Details:
     - Create config entry and use in HTTP connector to starwars API
 
 
+
+## Optional Extras
+
+Now we'd like you to call an API from a Logic App and then transform the result that comes back. For this optional challenge we will use the Star Wars API: https://swapi.dev/
+
+To succeed in this challenge we would like you to call the people API and return a message from a Star Wars character everytime the Logic App is triggered. Please provide whatever information about the character you like, but we will need to know 4 attributes about the character. The characters must be chosen at random. Good luck!
+
+
 # Challenge 2 - Development Practice
 
 Topics Covered:
