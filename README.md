@@ -37,7 +37,7 @@ Challenge Details:
 1) Create a Logic App in the Azure Portal
     - Create a stateful worflow with an HTTP request (the trigger is called "Request"), using  this [sample payload](Challenge%201/order_request.json) as the request body (click on the HTTP trigger and "Use sample payload to generate schema")
     - Add a response HTTP action and return the the request payload from the workflow (add the "Respone" action)
-    - Test using Postman - to do this, navigate to the workflow being developed, go the the oviewview and copy the "Workflow URL". Load postman and create a new request using the local URL and pass in the [sample payload]. Make sure to set the Content-Type header to be "application/json"(Challenge%201/order_request.json)
+    - Test using Postman - to do this, navigate to the workflow being developed, go the the oviewview and copy the "Workflow URL". Load postman and create a new request using the local URL and pass in the [sample payload] in the order.json file. Make sure to set the Content-Type header to be "application/json"(Challenge%201/order_request.json)
     - View Run History, looking at the inputs and outputs for the triggers and actions
     - Explore mini map, zooming in/out and triggers/connectors
 3) Create a Logic App in VS Code
