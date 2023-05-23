@@ -93,7 +93,7 @@ Contoso Retail receive orders  in JSON format from a service bus topic which mus
 5) Review the run history for the workflow to verify the workflow was triggered
 6) We now need to call the Stock API check that there is enough stock to fulfill the order. Create an HTTP action, with an HTTP GET to https://davephelpsapim.azure-api.net/contoso/order, passing the product productDetails.Id to the stock serice in query string paramter called "productId"
 7) Add a Compose action to create a new message containing the request content and the stock level returned from the stock API (don't worry about what the fields are called)
-8) Finally, add an action to call the Order API passing in the new message to https://davephelpsapim.azure-api.net/contoso/order. As there is an HTTP body, use an HTTP POST and Add two headers, "Content-Type" with a value of "application/json" and "Ocp-Apim-Subscription-Key" with a secuity key that will be provided to you
+8) Finally, add an action to call the Order API passing in the new message to https://davephelpsapim.azure-api.net/contoso/order. As there is an HTTP body, use an HTTP POST and Add two headers, "Content-Type" with a value of "application/json" and "Ocp-Apim-Subscription-Key" with a security key that will be provided to you
 9) Rename the actions to be something more meaningful, such as "Order API" and "Get Stock"
 10) Test the API to make sure the APIs are being called correclty and the new message is in the correct format
 11) Finally, create a new action to send the new message to the new topic called "fulfilOrderTopic"
