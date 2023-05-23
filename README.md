@@ -98,3 +98,23 @@ Contoso Retail receive orders  in JSON format from a service bus topic which mus
 10) Test the API to make sure the APIs are being called correclty and the new message is in the correct format
 11) Finally, create a new action to send the new message to the new topic called "fulfilOrderTopic"
 12) Test the workflow again to ensure the Service Bus action was successful sending a message to the "fulfilOrderTopic" topic 
+
+
+# Challenge 3 - Creating a CI/CD pipeline
+
+Contoso retail want to automate the process of deploying their logic apps. As part of this challenge you will need to set up a CI/CD process for Azure DevOps and store the code in a repository.
+
+Note: the CI/CD process for Azure Logic Apps is very similar to that of Azure Functions so should be familiar to anyone who has done this before.
+
+1) Create a repo for your code either in GitHub or Azure Devops Repos (Azure DevOps repos is more straightforward but use GitHub if you are familiar with it)
+2) Initialise a local repo where your Logic Apps solution is stored, then synchronise with the remote repo
+3) Create two YAML based pipelines in Azure DevOps to deploy your Logic App, one for the Logic Apps resource (infra) and one for the Workflows (code). Tip: create a folder called "infra" to store the infra pipeline so it can be triggered when there are any changes.
+3) Use variables in pipelines for API keys and URLs
+
+Tips:
+1) The task is Azure DevOps is called "AzureFunctionApp@1" and the appType is "workflowApp"
+2) Review https://learn.microsoft.com/en-us/azure/logic-apps/set-up-devops-deployment-single-tenant-azure-logic-apps?tabs=azure-devops#release-to-azure for details
+
+For a full CI/CD process, review the following complete solution:
+https://github.com/jordanbean-msft/logic-sb-integration
+
