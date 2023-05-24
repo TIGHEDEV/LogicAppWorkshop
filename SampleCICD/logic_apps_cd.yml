@@ -13,7 +13,7 @@ resources:
     source: 'LogicAppsHack CI'
     trigger:
       branches:
-      - master
+      - main
 
 stages:
 - stage: DEV
