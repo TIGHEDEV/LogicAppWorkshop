@@ -118,3 +118,14 @@ Tips:
 For a full CI/CD process, review the following complete solution:
 https://github.com/jordanbean-msft/logic-sb-integration
 
+# Challenge 4 - Monitoring
+
+- We will run through this live after lunch.
+
+# Challenge 5 - Securing your Logic Apps
+
+Contoso retail needs to make sure that only authorised logic apps can call their services. You are expected to enable managed identity on your logic app so that you can securely add messages to the service bus that you have set up.
+
+1) Using your existing service bus workload, recreate the connection to Service Bus but using managed identity instead of a connection string.
+2) Explore the different types of managed identity, undertstand what makes something user-assgined or system-assigned.
+3) We no longer want to write our Ocp-Apim-Subscription-Key as plain text in our workflow. Your task will now be to turn the subscription key into a key vault secret that you will reference in your workflow, instead of the plain subscription key that you have been using before. 
