@@ -122,6 +122,11 @@ https://github.com/jordanbean-msft/logic-sb-integration
 
 - We will run through this live after lunch.
 
+1) Create a new Logic App (Standard) in the Azure Portal
+2) Create a new workflow called "ContosoOrderTrigger"
+3) Go into Code view of the new workflow and paste in [this content](ContosoOrderTrigger/workflow.json)
+4) We will follow the rest live
+
 # Challenge 5 - Securing your Logic Apps
 
 Contoso retail needs to make sure that only authorised logic apps can call their services. You are expected to enable managed identity on your logic app so that you can securely add messages to the service bus that you have set up.
