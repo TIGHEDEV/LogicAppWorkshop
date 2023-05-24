@@ -1,0 +1,37 @@
+// General query - find by id
+requests
+| extend  correlation = todynamic(tostring(customDimensions.correlation))
+| extend id=correlation.clientTrackingId
+| where id == '08585166760330820919081616897CU00'
+| order by timestamp desc
+
+// Tracked properties
+requests 
+| extend trackedProps = todynamic(tostring(customDimensions.trackedProperties)), timestamp
+| project productName= tostring(trackedProps.productName), orderId= tostring(trackedProps.orderId),timestamp, workflowName = operation_Name, operation_Id
+| where orderId  != ''
+| order by timestamp desc
+
+// Pie chart by product name
+requests 
+| project trackedProps = todynamic(tostring(customDimensions.trackedProperties)), timestamp
+| project productName= tostring(trackedProps.productName), orderId= tostring(trackedProps.orderId),timestamp
+| where productName != ''
+| summarize Products = count() by productName
+| render piechart 
+
+// Exceptions
+requests 
+| where success == false
+| extend workflowName = operation_Name, actionName=name, operation_Id, timestamp
+| join (exceptions
+    | project problemId, operation_Id) on operation_Id
+| project workflowName, actionName, timestamp, problemId
+| order by timestamp desc
+
+// Graph by status
+requests 
+| project workflowName = operation_Name, operation_Id, timestamp, success
+| where workflowName  == 'ContosoOrderTrigger'
+| project success, workflowName
+| summarize status = count() by success
